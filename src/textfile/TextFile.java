@@ -24,7 +24,7 @@ public class TextFile {
 //    checkForText();    
     }
     
-    public static void checkForText() {
+    public static void checkForTextFile() {
         String sFile = "test.txt";
         
         String line = null;
