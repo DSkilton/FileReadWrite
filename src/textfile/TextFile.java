@@ -23,11 +23,11 @@ public class TextFile {
      */
     public static void main(String[] args) throws IOException {
         System.out.println(System.getProperty("user.dir")); //This will show you the directory your file will save in
-        //it should be the most top level folder of your project
-        
+                                                            //it should be the most top level folder of your project
         lineCountArchive();
-//    checkForTextFile();    
-//        checkTempFile();
+        lineCountArchiveTry();
+//      checkForTextFile();    
+//      checkTempFile();
     }
     
     public static void checkForTextFile() {
@@ -110,6 +110,23 @@ public class TextFile {
             while((sCurrentLine = br.readLine()) != null){
                 iTotalLines++;   
             }
+        System.out.println("Total Lines: " + iTotalLines);
+        return iTotalLines;
+    }
+    
+    public static int lineCountArchiveTry(){
+        String sCurrentLine;
+        int iTotalLines = 0;
+        
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("Archive.txt"));
+            
+            while((sCurrentLine = br.readLine()) != null){
+                iTotalLines++;   
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("Total Lines: " + iTotalLines);
         return iTotalLines;
     }
